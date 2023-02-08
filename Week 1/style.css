@@ -7,25 +7,20 @@
 }
 
 html{
-    color:var(--orange);
+    color:var(--black);
 }
 
-/* body{
-
+body{
+    margin:0;
+    padding:0;
+    
 }
 
-section{
-
-} */
+h2{
+    font-family: 'Ubuntu',sans-serif;
+}
 
 p{
-    color:red;
+    font-family: 'Ubuntu',sans-serif;
+    margin: 5rem;
 }
-
-/* ul{
-
-}
-
-img{
-    
-} */
