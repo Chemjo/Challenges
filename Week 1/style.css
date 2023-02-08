@@ -1,0 +1,31 @@
+/*Stylesheet for the About Me page*/
+
+:root{
+    --black:#040304;
+    --white:#f2f2f2;
+    --orange:#ff6900;
+}
+
+html{
+    color:var(--orange);
+}
+
+body{
+
+}
+
+section{
+
+}
+
+p{
+    color:var(--orange);
+}
+
+ul{
+
+}
+
+img{
+    
+}
