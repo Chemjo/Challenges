@@ -10,22 +10,22 @@ html{
     color:var(--orange);
 }
 
-body{
+/* body{
 
 }
 
 section{
 
-}
+} */
 
 p{
-    color:var(--orange);
+    color:red;
 }
 
-ul{
+/* ul{
 
 }
 
 img{
     
-}
+} */
