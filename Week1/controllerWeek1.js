@@ -4,6 +4,8 @@
 
 let myList = [];    //Array declaration with empty assignment
 
+myList.push("Test Push");
+
 function add(item,myList){  //Function to add one item to the list via a push
     myList.push(item);
 }
@@ -17,3 +19,8 @@ function printList(myList){ //Function to print the entire list
     }
     alert(printList);
 }
+
+//--------------------------------------Challenge VI: Making a Clickable Button to Print--------------------------------------
+
+let printButton = document.querySelector("#print-button"); //Querying for our button
+printButton.addEventListener("click", printList); //Allowing for the printList function to run on each button click
