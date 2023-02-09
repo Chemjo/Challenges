@@ -1,0 +1,72 @@
+/*Stylesheet for the About Me page*/
+
+:root{
+    --black:#040304;
+    --white:#f2f2f2;
+    --bronze:#bd5600;
+    --bold-orange:#ff5b00;
+    --orange:#f18e48;
+    --light-orange:#f6c5a2;
+}
+
+html{
+    color:var(--black);
+}
+
+body{
+    margin:0;
+    padding:0;
+    background:radial-gradient(var(--orange),var(--bold-orange),var(--bronze),var(--black));
+    font-family: 'Ubuntu',sans-serif;
+}
+
+.textbox{
+    background-color: var(--light-orange);
+    border:thick solid var(--black);
+}
+
+h2{
+    font-size:1.8rem;
+    font-weight: bold;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem;
+    margin-left:40%;
+    margin-right: 40%;
+}
+
+p{
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right:auto;
+    width: 90%;
+    font-size:1.4rem;
+}
+
+#hobbies-and-interests{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    min-width: 20%;
+}
+
+ul{
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: left;
+}
+
+li{
+    font-weight: normal;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+img{
+    margin-bottom: 5rem;
+    display:flex;
+    margin-left: auto;
+    margin-right:auto;
+    border: 6mm groove #ffcb00;
+}
