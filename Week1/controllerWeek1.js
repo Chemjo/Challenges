@@ -4,23 +4,24 @@
 
 let myList = [];    //Array declaration with empty assignment
 
-myList.push("Test Push");
 
-function add(item,myList){  //Function to add one item to the list via a push
+function add(item){     //Function to add one item to the list via a push
     myList.push(item);
 }
 
 //--------------------------------------Challenge V: Printing all Items in an Alert--------------------------------------
 
-function printList(myList){ //Function to print the entire list
-    let printList = "List of Items:\n";
-    for(let item in myList){
-        printList.concat(item+"\n");
+function printer(){     //Function to print the entire list
+    if(myList === undefined || myList.length == 0){      //Checks for cases in which there is nothing to print
+        alert("Hey, you're trying to make me print nothing? Sorry, no dice.")
     }
-    alert(printList);
+    
+    for(let item in myList){        //Iterates over the array and sends out an alert for each entry's value
+        alert(myList[item]);
+    }
 }
 
 //--------------------------------------Challenge VI: Making a Clickable Button to Print--------------------------------------
 
-let printButton = document.querySelector("#print-button"); //Querying for our button
-printButton.addEventListener("click", printList); //Allowing for the printList function to run on each button click
+let printButton = document.querySelector("#printer"); //Querying for our button
+printButton.addEventListener("click", printer); //Allowing for the printList function to run on each button click
