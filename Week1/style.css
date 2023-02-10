@@ -71,14 +71,22 @@ img{
     border: 6mm groove #ffcb00;
 }
 
-input[type=button]{
-    display: flex;
+#js-challenges{
+    display:flex;
+    justify-content: space-evenly;
     margin-top:2rem;
     margin-bottom: 4rem;
     margin-left: auto;
     margin-right:auto;
+}
+
+input[type=button]{  
     width: 7rem;
     height: 3.5rem;
     font-size: 1.1rem;
-    justify-content: center;
+}
+
+input[type=text]{
+    height:1.5rem;
+    width:10rem; 
 }
