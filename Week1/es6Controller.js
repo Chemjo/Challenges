@@ -30,27 +30,27 @@ function workingFinish(){
 
 /*Declaring and initializing a variable to store a Pokemon's name
   For Challenges 2-4, this will be hard-coded to Nidoking      */
-let pokemon = "Nidoking";
+let currentPokemon = "Nidoking";
 //Declaring and initializing our fetch button
 let fetcher = document.querySelector("#poke-fetcher");
-//Adding the click event listener
-fetcher.addEventListener("click",fetchPokemon);
+//Adding the new click event listener that calls instead for our new updatePokemon() function
+fetcher.addEventListener("click",updatePokemon);
 
 //Challenge 3 Additions: Querying and caching our header and paragraph
 let nameDisplay = document.querySelector("#name-display");
 let healthDisplay = document.querySelector("#health-display");
 
-//Implementing our first draft fetchPokemon() function
-function fetchPokemon(){
+//Implementing our second draft fetchPokemon() function
+async function fetchPokemon(pokemon){
     //Function call to ensure our Pokemon name can be read by the Pokemon API
     pokemon = nameFormatter(pokemon);
     //Declaring and initalizing our request to be fetched
     const request = new Request("https://pokeapi.co/api/v2/pokemon/" + pokemon);
     /*Declaring and initializing our response from the Pokemon API using the Fetch API
-      In order to do this without using async or await, we need to string together our
-      fetching with a .then() call for returning our json object followed by another
-      to pass our data to the pokeDisplay function*/
-    const reply = fetch(request).then((response) => response.json()).then((data) => pokeDisplay(data));
+      Now that this is an asynchronous function, we can use the await keyword to simplify our syntax*/
+    const reply = await fetch(request);
+    //Passing our reply to the display function
+    return reply.json();
 }
 /*Implementing our function to format names for the Pokemon API 
   We'll account for changing it to lowercase and replacing any spaces  */
@@ -69,4 +69,8 @@ function pokeDisplay(fetchedPokemon){
     let pokeHealth = fetchedPokemon.stats[0].base_stat;
     nameDisplay.innerHTML = pokeName;
     healthDisplay.innerHTML = "Base HP: " + pokeHealth;
+}
+
+function updatePokemon(){
+    fetchPokemon(currentPokemon).then(response => pokeDisplay(response));
 }
