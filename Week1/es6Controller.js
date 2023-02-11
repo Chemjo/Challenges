@@ -29,8 +29,8 @@ function workingFinish(){
 ------------------------------------------------------------*/
 
 /*Declaring and initializing a variable to store a Pokemon's name
-  For Challenges 2-4, this will be hard-coded to Nidoking      */
-let currentPokemon = "Nidoking";
+  Challenge 5 will allow for a textbox to supply the Pokemon we want*/
+let currentPokemon = "";
 //Declaring and initializing our fetch button
 let fetcher = document.querySelector("#poke-fetcher");
 //Adding the new click event listener that calls instead for our new updatePokemon() function
@@ -39,6 +39,9 @@ fetcher.addEventListener("click",updatePokemon);
 //Challenge 3 Additions: Querying and caching our header and paragraph
 let nameDisplay = document.querySelector("#name-display");
 let healthDisplay = document.querySelector("#health-display");
+
+//Challenge 5 Additions: Querying for our text box and caching it
+let textInput = document.querySelector("#poke-setter");
 
 //Implementing our second draft fetchPokemon() function
 async function fetchPokemon(pokemon){
@@ -72,5 +75,13 @@ function pokeDisplay(fetchedPokemon){
 }
 
 function updatePokemon(){
-    fetchPokemon(currentPokemon).then(response => pokeDisplay(response));
+    if(textInput.value != ``){
+        currentPokemon = textInput.value;
+        fetchPokemon(currentPokemon).then(response => pokeDisplay(response));
+        textInput.value = ``;
+    }
+    else{
+        alert("You can't search for Missingno.");
+    }
+    
 }
