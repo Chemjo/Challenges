@@ -35,6 +35,11 @@ let pokemon = "Nidoking";
 let fetcher = document.querySelector("#poke-fetcher");
 //Adding the click event listener
 fetcher.addEventListener("click",fetchPokemon);
+
+//Challenge 3 Additions: Querying and caching our header and paragraph
+let nameDisplay = document.querySelector("#name-display");
+let healthDisplay = document.querySelector("#health-display");
+
 //Implementing our first draft fetchPokemon() function
 function fetchPokemon(){
     //Function call to ensure our Pokemon name can be read by the Pokemon API
@@ -54,11 +59,14 @@ function nameFormatter(name){
     name = name.replace(" ","-");
     return name;
 }
-//Implementing our first draft function to display our Pokemon's info
+//Implementing our second draft function to display our Pokemon's info
 function pokeDisplay(fetchedPokemon){
     //Declaring variable to store a Pokemon's name
     let pokeName = fetchedPokemon.name;
     //Capitalizing the first letter
     pokeName = pokeName[0].toUpperCase() + pokeName.substr(1);
-    alert(pokeName);
+    //Challenge 3 Additions: Getting HP and displaying to header and paragraph instead of pushing an alert
+    let pokeHealth = fetchedPokemon.stats[0].base_stat;
+    nameDisplay.innerHTML = pokeName;
+    healthDisplay.innerHTML = "Base HP: " + pokeHealth;
 }
