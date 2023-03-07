@@ -11,4 +11,11 @@ public without sharing class  DataLord {
         return allAccounts.size();
     }
 
+    //Challenge 2: Number of Hot Rated Accounts to be Returned
+    public Integer numHot(){
+        //Declare and query for our list of Hot Rated Accounts
+        List<Account> hotAccounts = [SELECT Rating FROM Account WHERE Rating='Hot'];
+        return hotAccounts.size();
+    }
+
 }
