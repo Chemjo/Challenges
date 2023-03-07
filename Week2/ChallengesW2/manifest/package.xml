@@ -9,4 +9,8 @@
                 <members>Case.WebAutoResponseRule</members>
                 <name>AutoResponseRule</name>
             </types>
+            <types>
+                <members>Lead.Chal2Path<members>
+                <name>PathAssistant<name>
+            </types>
     </Package>
