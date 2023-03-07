@@ -3,4 +3,4 @@
 
 DataLord dl = new DataLord();
 
-System.debug(dl.numHot());
+System.debug(dl.numComplex());
