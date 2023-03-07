@@ -92,4 +92,63 @@ public class Calculator {
         return quotient;
     }
 
+    public Integer mod(Integer dividend, Integer divisor){
+        /*---------------------------------------------------------------------------------------------------------------------
+        *In practice, this functions very similarly to our divide() method
+        *We just need to return the remainder this time, not the quotient
+        *Much of the code should remain the same, aside from a few differences
+        *In fact, we don't even need to add any new variables
+            -We could simply return the altered dividend by the end, and switch the sign if needed
+            -For readability, we'll assign "dividend" to "remainder" anyways
+        *Why is every return now "return remainder"?
+            -Because it will only return 0 unless there was a non-zero number to be assigned after other checks
+        ---------------------------------------------------------------------------------------------------------------------*/
+        //Declaring our remainder for readability
+        Integer remainder = 0;
+        //Check if divisor is 0
+        if(divisor == 0){
+            return remainder;
+        }
+        //Declaring our Boolean to track quotient sign
+        Boolean isNegative = false;
+        //Declaring a Boolean to check if we ever enter the below while-loop
+        Boolean couldNotDivide = true;
+        //Check if only one of the parameters is negative
+        if((divisor < 0 && dividend > 0) || (divisor > 0 && dividend < 0)){
+            //Sets to negative
+            isNegative = true;
+        }
+        //Separately, let's ensure our values are both positive for simplicity
+        if(divisor < 0){
+            divisor = 0 - divisor;
+        }
+        if(dividend < 0){
+            dividend = 0 - dividend;
+        }
+        //While loop to check if the dividend is greater than or equal to the divisor
+        while(dividend > divisor){
+            //Record that we could divide
+            couldNotDivide = false;
+            //Subtract our divisor from the dividend without changing the divisor's value
+            dividend = add(dividend,0-divisor);
+            //Checks if divisor has eclipsed dividend
+            if(divisor > dividend){
+                //Only now will we assign dividend leftovers to remainder
+                remainder = dividend;
+            }
+        }
+        //Simply return 0 if we could never divide
+        if(couldNotDivide){
+            return 0;
+        }
+        //Check if our quotient is negative, and if so change the sign
+        if(isNegative){
+            remainder = 0 - remainder;
+        }
+        //Return our final value
+        return remainder;
+
+    }
+
+
 }

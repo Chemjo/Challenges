@@ -3,8 +3,17 @@
 
 Calculator myCalc = new Calculator();
 
+//Both Positive w/ Remainder
+System.debug(myCalc.mod(49,8)); //1
+//Both Negative w/ Remainder
+System.debug(myCalc.mod(-49,-8)); //1
+//Negative Dividend with Remainder
+System.debug(myCalc.mod(-49,8)); //-1
+//Negative Divisor with Remainder
+System.debug(myCalc.mod(49,-8)); //-1
+//No Remainder 
+System.debug(myCalc.mod(48,8)); //0
 //Zero Tests
-System.debug(myCalc.divide(55, 0)); //0
-
-System.debug(myCalc.divide(0, 32)); //0
+System.debug(myCalc.mod(55, 0)); //0
+System.debug(myCalc.mod(0, 32)); //0
 

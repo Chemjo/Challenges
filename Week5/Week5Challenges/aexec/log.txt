@@ -7,18 +7,32 @@ Execute Anonymous: //force:apex:execute -f aexec/anon.apex > aexec/log.txt
 Execute Anonymous: 
 Execute Anonymous: Calculator myCalc = new Calculator();
 Execute Anonymous: 
+Execute Anonymous: //Both Positive w/ Remainder
+Execute Anonymous: System.debug(myCalc.mod(49,8)); //1
+Execute Anonymous: //Both Negative w/ Remainder
+Execute Anonymous: System.debug(myCalc.mod(-49,-8)); //1
+Execute Anonymous: //Negative Dividend with Remainder
+Execute Anonymous: System.debug(myCalc.mod(-49,8)); //-1
+Execute Anonymous: //Negative Divisor with Remainder
+Execute Anonymous: System.debug(myCalc.mod(49,-8)); //-1
+Execute Anonymous: //No Remainder 
+Execute Anonymous: System.debug(myCalc.mod(48,8)); //0
 Execute Anonymous: //Zero Tests
-Execute Anonymous: System.debug(myCalc.divide(55, 0)); //0
+Execute Anonymous: System.debug(myCalc.mod(55, 0)); //0
+Execute Anonymous: System.debug(myCalc.mod(0, 32)); //0
 Execute Anonymous: 
-Execute Anonymous: System.debug(myCalc.divide(0, 32)); //0
-Execute Anonymous: 
-13:52:32.214 (214109185)|USER_INFO|[EXTERNAL]|0058b00000Fe0wP|thechasejohns@wise-moose-a0zv7m.com|(GMT-08:00) Pacific Standard Time (America/Los_Angeles)|GMT-08:00
-13:52:32.214 (214171210)|EXECUTION_STARTED
-13:52:32.214 (214179761)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
-13:52:32.214 (229653633)|USER_DEBUG|[7]|DEBUG|0
-13:52:32.214 (229739118)|USER_DEBUG|[9]|DEBUG|0
-13:52:32.229 (229814960)|CUMULATIVE_LIMIT_USAGE
-13:52:32.229 (229814960)|LIMIT_USAGE_FOR_NS|(default)|
+14:16:32.6 (1006862002)|USER_INFO|[EXTERNAL]|0058b00000Fe0wP|thechasejohns@wise-moose-a0zv7m.com|(GMT-08:00) Pacific Standard Time (America/Los_Angeles)|GMT-08:00
+14:16:32.6 (1006990954)|EXECUTION_STARTED
+14:16:32.6 (1007001640)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+14:16:32.6 (1045232721)|USER_DEBUG|[7]|DEBUG|1
+14:16:32.6 (1045441834)|USER_DEBUG|[9]|DEBUG|1
+14:16:32.6 (1045574385)|USER_DEBUG|[11]|DEBUG|-1
+14:16:32.6 (1045706066)|USER_DEBUG|[13]|DEBUG|-1
+14:16:32.6 (1071962801)|USER_DEBUG|[15]|DEBUG|0
+14:16:32.6 (1072119008)|USER_DEBUG|[17]|DEBUG|0
+14:16:32.6 (1072203076)|USER_DEBUG|[18]|DEBUG|0
+14:16:32.72 (1072474248)|CUMULATIVE_LIMIT_USAGE
+14:16:32.72 (1072474248)|LIMIT_USAGE_FOR_NS|(default)|
   Number of SOQL queries: 0 out of 100
   Number of query rows: 0 out of 50000
   Number of SOSL queries: 0 out of 20
@@ -33,8 +47,8 @@ Execute Anonymous:
   Number of queueable jobs added to the queue: 0 out of 50
   Number of Mobile Apex push calls: 0 out of 10
 
-13:52:32.229 (229814960)|CUMULATIVE_LIMIT_USAGE_END
+14:16:32.72 (1072474248)|CUMULATIVE_LIMIT_USAGE_END
 
-13:52:32.214 (229880392)|CODE_UNIT_FINISHED|execute_anonymous_apex
-13:52:32.214 (229888801)|EXECUTION_FINISHED
+14:16:32.6 (1072788579)|CODE_UNIT_FINISHED|execute_anonymous_apex
+14:16:32.6 (1072914881)|EXECUTION_FINISHED
 
