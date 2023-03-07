@@ -43,8 +43,14 @@ public class Calculator {
             -If one is negative, set quotient to negative
 
         Challenge 4:
+        *We simply need to check if the divisor is 0 and account for that
+        *Let's do that before checking anything else
         ---------------------------------------------------------------------------------------------------------------------*/
-        
+        //Check if our divisor is 0
+        if(divisor == 0){
+            return 0;
+        }
+
         //Declaring our returned quotient
         Integer quotient = 1;
         //Declaring our Boolean to track quotient sign

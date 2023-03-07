@@ -7,27 +7,18 @@ Execute Anonymous: //force:apex:execute -f aexec/anon.apex > aexec/log.txt
 Execute Anonymous: 
 Execute Anonymous: Calculator myCalc = new Calculator();
 Execute Anonymous: 
-Execute Anonymous: //Both Positive Uneven Test
-Execute Anonymous: System.debug(myCalc.divide(55, 8)); //6
-Execute Anonymous: //Both Negative Test
-Execute Anonymous: System.debug(myCalc.divide(-47, -12)); //3
-Execute Anonymous: //Negative Dividend Test
-Execute Anonymous: System.debug(myCalc.divide(-11, 2)); //-5
-Execute Anonymous: //Negative Divisor Test
-Execute Anonymous: System.debug(myCalc.divide(14, -5)); //-2
+Execute Anonymous: //Zero Tests
+Execute Anonymous: System.debug(myCalc.divide(55, 0)); //0
 Execute Anonymous: 
-Execute Anonymous: //Dividend is Smaller Test
-Execute Anonymous: System.debug(myCalc.divide(4,44)); //0
-13:46:33.500 (500828719)|USER_INFO|[EXTERNAL]|0058b00000Fe0wP|thechasejohns@wise-moose-a0zv7m.com|(GMT-08:00) Pacific Standard Time (America/Los_Angeles)|GMT-08:00
-13:46:33.500 (500913560)|EXECUTION_STARTED
-13:46:33.500 (500921381)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
-13:46:33.500 (519092489)|USER_DEBUG|[7]|DEBUG|6
-13:46:33.500 (519207389)|USER_DEBUG|[9]|DEBUG|3
-13:46:33.500 (519289227)|USER_DEBUG|[11]|DEBUG|-5
-13:46:33.500 (519354037)|USER_DEBUG|[13]|DEBUG|-2
-13:46:33.500 (519394541)|USER_DEBUG|[16]|DEBUG|0
-13:46:33.519 (519502768)|CUMULATIVE_LIMIT_USAGE
-13:46:33.519 (519502768)|LIMIT_USAGE_FOR_NS|(default)|
+Execute Anonymous: System.debug(myCalc.divide(0, 32)); //0
+Execute Anonymous: 
+13:52:32.214 (214109185)|USER_INFO|[EXTERNAL]|0058b00000Fe0wP|thechasejohns@wise-moose-a0zv7m.com|(GMT-08:00) Pacific Standard Time (America/Los_Angeles)|GMT-08:00
+13:52:32.214 (214171210)|EXECUTION_STARTED
+13:52:32.214 (214179761)|CODE_UNIT_STARTED|[EXTERNAL]|execute_anonymous_apex
+13:52:32.214 (229653633)|USER_DEBUG|[7]|DEBUG|0
+13:52:32.214 (229739118)|USER_DEBUG|[9]|DEBUG|0
+13:52:32.229 (229814960)|CUMULATIVE_LIMIT_USAGE
+13:52:32.229 (229814960)|LIMIT_USAGE_FOR_NS|(default)|
   Number of SOQL queries: 0 out of 100
   Number of query rows: 0 out of 50000
   Number of SOSL queries: 0 out of 20
@@ -42,8 +33,8 @@ Execute Anonymous: System.debug(myCalc.divide(4,44)); //0
   Number of queueable jobs added to the queue: 0 out of 50
   Number of Mobile Apex push calls: 0 out of 10
 
-13:46:33.519 (519502768)|CUMULATIVE_LIMIT_USAGE_END
+13:52:32.229 (229814960)|CUMULATIVE_LIMIT_USAGE_END
 
-13:46:33.500 (519588698)|CODE_UNIT_FINISHED|execute_anonymous_apex
-13:46:33.500 (519606808)|EXECUTION_FINISHED
+13:52:32.214 (229880392)|CODE_UNIT_FINISHED|execute_anonymous_apex
+13:52:32.214 (229888801)|EXECUTION_FINISHED
 
