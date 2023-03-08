@@ -88,6 +88,22 @@ public without sharing class  DataLord {
         return [FIND 'Tom' IN Name FIELDS RETURNING Contact(FirstName), Lead(FirstName)];
     }
 
+    //SOSL Challenge 2: Find all Accounts that contain an 'a' and an 'o' in any field
+    public List<Account> accountsWithAO(){
+        //Declare and assign an Account List List with any fields containing an a followed by an o
+        List<List<Account>> aoAccounts = [FIND '*a*o*' IN All FIELDS RETURNING Account(Name)];
+        //Declare and assign an Account List List with any fields containing an o followed by an a
+        List<List<Account>> oaAccounts = [FIND '*o*a*' IN All FIELDS RETURNING Account(Name)];
+        //Declare an Account List to be returned and assign our first list
+        List<Account> allAccounts = aoAccounts[0];
+        //Iterate over our second list to add their Accounts
+        for(Account acct : oaAccounts[0]){
+            allAccounts.add(acct);
+        }
+        //Return all relevant accounts
+        return allAccounts;
+    }
+
     /*---------------------------------------------------------------------------------------------------------------------
                                                      DML METHODS
     ---------------------------------------------------------------------------------------------------------------------*/
