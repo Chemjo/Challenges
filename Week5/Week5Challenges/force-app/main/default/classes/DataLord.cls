@@ -29,16 +29,50 @@ public without sharing class  DataLord {
 
     //Challenge 4: Returning the Big 5 in a single line filtering out nulls sorting from most to least
     public List<Account> bigFive(){
-        return [SELECT AnnualRevenue FROM Account ORDER BY AnnualRevenue DESC NULLS LAST LIMIT 5];
+        return [
+            SELECT AnnualRevenue
+            FROM Account
+            ORDER BY AnnualRevenue DESC NULLS LAST
+            LIMIT 5
+            ];
     }
 
     //Challenge 5: Returning the most recent Opportunity with an amount over $100,000
     public List<Opportunity> lastBigOpportunity(){
-        return [SELECT CloseDate, Amount FROM Opportunity WHERE Amount > 100000 ORDER BY CloseDate DESC LIMIT 1];
+        return [
+            SELECT CloseDate, Amount
+            FROM Opportunity
+            WHERE Amount > 100000
+            ORDER BY CloseDate DESC
+            LIMIT 1
+            ];
     }
 
     //Challenge 6: Returning all Contacts associated with Hot Rated Accounts (Querying the child for parent fields)
     public List<Contact> majorPlayers(){
-        return [SELECT Name, Account.Name, Account.Rating FROM Contact WHERE Account.Rating = 'Hot'];
+        return [
+            SELECT Name, Account.Name, Account.Rating
+            FROM Contact
+            WHERE Account.Rating = 'Hot'
+            ];
+    }
+
+    /*Challenge 7: Returning the Account Name of the Account with the most associated contacts
+     NOTE: WE CANNOT USE AN AGGREGATE FUNCTION WITHIN OUR SUBQUERY*/
+    public String mostPopularAccount(){
+        //Declaring our return name String and Integer to track greatest amount of Contacts out of our Accounts
+        String mostPopularAccountName = '';
+        Integer largestCount = 0;
+        //SOQL For-Loop to iterate over our Accounts with related Contacts
+        for(Account acct : [SELECT Name, (SELECT Name FROM Contacts) FROM Account]){
+            //If-statement to check if our current Account
+            if(acct.Contacts.size() > largestCount){
+                //If we find an Account with more Contacts than the previous most, assign the size and name
+                largestCount = acct.Contacts.size();
+                mostPopularAccountName = acct.Name;
+            }
+        } 
+        //Return our most popular account
+        return mostPopularAccountName;
     }
 }
