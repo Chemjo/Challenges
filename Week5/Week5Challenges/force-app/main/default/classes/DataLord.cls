@@ -32,7 +32,12 @@ public without sharing class  DataLord {
         return [SELECT AnnualRevenue FROM Account ORDER BY AnnualRevenue DESC NULLS LAST LIMIT 5];
     }
 
-    //Challenge 5: Returning all Contacts associated with Hot Rated Accounts (Querying the child for parent fields)
+    //Challenge 5: Returning the most recent Opportunity with an amount over $100,000
+    public List<Opportunity> lastBigOpportunity(){
+        return [SELECT CloseDate, Amount FROM Opportunity WHERE Amount > 100000 ORDER BY CloseDate DESC LIMIT 1];
+    }
+
+    //Challenge 6: Returning all Contacts associated with Hot Rated Accounts (Querying the child for parent fields)
     public List<Contact> majorPlayers(){
         return [SELECT Name, Account.Name, Account.Rating FROM Contact WHERE Account.Rating = 'Hot'];
     }

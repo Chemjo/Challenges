@@ -3,4 +3,4 @@
 
 DataLord dl = new DataLord();
 
-System.debug(dl.majorPlayers());
+System.debug(dl.lastBigOpportunity());
