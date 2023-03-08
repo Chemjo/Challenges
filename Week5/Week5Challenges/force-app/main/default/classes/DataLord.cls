@@ -27,4 +27,9 @@ public without sharing class  DataLord {
         return complexAccounts.size();
     }
 
+    //Challenge 4: Returning the Big 5 in a single line filtering out nulls sorting from most to least
+    public List<Account> bigFive(){
+        return [SELECT AnnualRevenue FROM Account ORDER BY AnnualRevenue DESC NULLS LAST LIMIT 5];
+    }
+
 }
