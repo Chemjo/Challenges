@@ -1,11 +1,14 @@
 /*---------------------------------------------------------------------------------------------------------------------
 Author: Chase Johns
-Last Modified: 3/7/2023
+Last Modified: 3/8/2023
 Description: Data handler class utilized in Coding Challenges
 ---------------------------------------------------------------------------------------------------------------------*/
 
 public without sharing class  DataLord {
     
+    /*---------------------------------------------------------------------------------------------------------------------
+                                                     SOQL METHODS
+    ---------------------------------------------------------------------------------------------------------------------*/
     public Integer numAccounts(){
         List<Account> allAccounts = [SELECT Id FROM Account];
         return allAccounts.size();
@@ -75,4 +78,17 @@ public without sharing class  DataLord {
         //Return our most popular account
         return mostPopularAccountName;
     }
+
+    /*---------------------------------------------------------------------------------------------------------------------
+                                                     SOSL METHODS
+    ---------------------------------------------------------------------------------------------------------------------*/
+
+    //SOSL Challenge 1: Find all Contacts and Leads named Tom
+    public List<List<SObject>> tomSearcher(){
+        return [FIND 'Tom' IN Name FIELDS RETURNING Contact(FirstName), Lead(FirstName)];
+    }
+
+    /*---------------------------------------------------------------------------------------------------------------------
+                                                     DML METHODS
+    ---------------------------------------------------------------------------------------------------------------------*/
 }

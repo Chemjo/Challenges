@@ -3,4 +3,4 @@
 
 DataLord dl = new DataLord();
 
-System.debug(dl.mostPopularAccount());
+System.debug(dl.tomSearcher());
