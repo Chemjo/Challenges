@@ -107,4 +107,42 @@ public without sharing class  DataLord {
     /*---------------------------------------------------------------------------------------------------------------------
                                                      DML METHODS
     ---------------------------------------------------------------------------------------------------------------------*/
+    //DML Challenge 1: Create and insert 200 uniquely named Contacts
+    public void spawnContacts(){
+        //Initializing a List of Contacts
+        List<Contact> joebotsForInsertion = new List<Contact>();
+        //For-Loop to iterate 200 times and add 200 unique Joebots
+        for(Integer i = 0; i < 200; i++){
+            //Declaring and assigning our Joebot's unique name
+            String joebotUnique = 'Joebot MK' + Math.random();
+            //Declaring and assigning our Joebot's number
+            String joebotUnitNumber = 'UN_' + i;
+            //Initializing our current Joebot and giving it its name
+            Contact joebot = new Contact(FirstName = joebotUnique, LastName = joebotUnitNumber);
+            //Adding our Joebot to the Contact List
+            joebotsForInsertion.add(joebot);
+        }
+        //DML to add Entire List
+        insert joebotsForInsertion;
+    }
+
+    //DML Challenge 2: Creating and inserting 3 uniquely named Accounts
+    public void createHomes(){
+        insert new List<Account>{
+            new Account(Name = 'Sintracorp'),
+            new Account(Name = 'Umbrella Corporation'),
+            new Account(Name = 'Okumura Foods')
+        };
+    }
+
+    //DML Challenge 3: Deletes the 50 most recent Contacts
+    public void relocate(){
+
+    }
+
+    //DML Challenge 4: Relates all Joebots to the 3 Accounts Randomly
+    public void assignHomes(){
+
+    }
+
 }
