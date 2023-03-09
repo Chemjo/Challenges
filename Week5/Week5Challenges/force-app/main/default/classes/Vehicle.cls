@@ -7,11 +7,46 @@ Description: Vehicle Parent Class for OOP Challenges
 public abstract class Vehicle {
     
     //Challenge 2: Default-Values No-Arg Constructor
+    // public Vehicle(){
+    //     this.speed = 42;
+    //     this.name = 'The Bridge 4';
+    //     this.occupants = 100;
+    //     this.capacity = 250;
+    // }
+
+    //Challenge 4: New Constructor Chain
+
+    //Full Args
+    public Vehicle(String name, Integer capacity, Integer occupants, Integer speed){
+        this.speed = speed;
+        this.name = name;
+        this.occupants = occupants;
+        //Capacity must be at least 1
+        if(capacity < 1){
+            this.capacity = 1;
+        }else{
+            this.capacity = capacity;
+        }
+    }
+
+    //3 Args
+    public Vehicle(String name, Integer capacity, Integer occupants){
+        this(name,capacity,occupants,0);
+    }
+
+    //2 Args
+    public Vehicle(String name, Integer capacity){
+        this(name,capacity,0);
+    }
+
+    //1 Arg
+    public Vehicle(String name){
+        this(name,1);
+    }
+
+    //No Args
     public Vehicle(){
-        this.speed = 42;
-        this.name = 'The Bridge 4';
-        this.occupants = 100;
-        this.capacity = 250;
+        this('');
     }
     
     /*Challenge 1: Preparing our instance variables, constants , and properties
@@ -51,7 +86,7 @@ public abstract class Vehicle {
     protected List<Medium> media;
 
     //Challenge 2 Methods
-    public void accelerate(Integer speedChange){
+    public virtual void accelerate(Integer speedChange){
         /*Sets the new Speed to our current + or - the change, based on its sign
           Based on our property declaration, if the speed would become negative, it remains at 0*/ 
         speed = speed+speedChange;
