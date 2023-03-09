@@ -5,6 +5,7 @@
                 <!--<members>Calculator</members>-->
                 <!--<members>DataLord</members>-->
                 <members>Vehicle</members>
+                <members>Car</members>
                 <name>ApexClass</name>
             </types>
     </Package>

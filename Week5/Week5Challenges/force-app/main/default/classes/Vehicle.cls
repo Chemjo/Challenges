@@ -58,7 +58,7 @@ public abstract class Vehicle {
     }
 
     //Will be implemented by Car later
-    public abstract Integer turn();
+    abstract void turn(Double degrees);
 
     //ToString method to return our Vehicle to a nicely formatted string
     public override String toString(){
