@@ -3,7 +3,8 @@
         <version>56.0</version>
             <types>
                 <!--<members>Calculator</members>-->
-                <members>DataLord</members>
+                <!--<members>DataLord</members>-->
+                <members>Vehicle</members>
                 <name>ApexClass</name>
             </types>
     </Package>
