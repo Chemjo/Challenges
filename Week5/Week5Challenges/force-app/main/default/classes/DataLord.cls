@@ -137,6 +137,14 @@ public without sharing class  DataLord {
 
     //DML Challenge 3: Deletes the 50 most recent Contacts
     public void relocate(){
+        //SOQL Query for a List of our 50 most recent Contacts and its assignment
+        List<Contact> contactsToBeRelocated = [
+            SELECT CreatedDate, Name
+            FROM Contact
+            ORDER BY CreatedDate DESC
+            LIMIT 50
+        ];
+        delete contactsToBeRelocated;
 
     }
 
