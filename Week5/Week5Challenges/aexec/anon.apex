@@ -3,4 +3,4 @@
 
 DataLord dl = new DataLord();
 
-dl.relocate();
+dl.assignHomes();

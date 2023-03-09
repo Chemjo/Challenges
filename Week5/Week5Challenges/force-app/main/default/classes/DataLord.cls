@@ -150,7 +150,26 @@ public without sharing class  DataLord {
 
     //DML Challenge 4: Relates all Joebots to the 3 Accounts Randomly
     public void assignHomes(){
-
+        //Querying for the Accounts we made previously and assigning them to a List
+        List<Account> ourAccounts = [SELECT Name FROM Account WHERE Name = 'Sintracorp' OR Name = 'Umbrella Corporation' OR Name = 'Okumura Foods'];
+        //Querying for the Contacts we made previously and assigning them to a List
+        List<Contact> ourJoebots = [SELECT FirstName, LastName FROM Contact WHERE FirstName LIKE 'Joebot MK%' AND LastName LIKE 'UN_%'];
+        //For-each loop to iterate through our Contacts
+        for(Contact joebot : ourJoebots){
+            //Generate a random number to pick to which Account our Joebot will be assigned that is refreshed on each loop iteration
+            Double randAccount = Math.random();
+            /*If-else chain verifying what range the random number falls into and assigns a Joebot accordingly
+              1/3 chance for each of our 3 Accounts*/
+            if(randAccount <= 0.33){
+                joebot.AccountId = ourAccounts[0].Id;
+            }else if(randAccount <= 0.66){
+                joebot.AccountId = ourAccounts[1].Id;
+            }else{
+                joebot.AccountId = ourAccounts[2].Id;
+            }
+        }
+        //Updating our records
+        update ourJoebots;
     }
 
 }
