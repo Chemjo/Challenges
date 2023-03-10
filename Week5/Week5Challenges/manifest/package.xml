@@ -6,13 +6,13 @@
                 <members>DataLord</members>
                 <members>Vehicle</members>
                 <members>Car</members>-->
-                <members>AccountHelper</members>
-                <!--<members>ContactHelper</members>-->
+                <!--<members>AccountHelper</members>-->
+                <members>ContactHelper</members>
                 <name>ApexClass</name>
             </types>
             <types>
-                <members>AccountTrigger</members>
-                <!--<members>ContactTrigger</members>-->
+                <!--<members>AccountTrigger</members>-->
+                <members>ContactTrigger</members>
                 <name>ApexTrigger</name>
             </types>
     </Package>
