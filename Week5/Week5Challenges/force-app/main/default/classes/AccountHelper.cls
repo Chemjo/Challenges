@@ -1,6 +1,6 @@
 /*---------------------------------------------------------------------------------------------------------------------
 Author: Chase Johns
-Last Modified: 3/9/2023
+Last Modified: 3/10/2023
 Description: Helper Class for Trigger on Account for Coding Challenges
 ---------------------------------------------------------------------------------------------------------------------*/
 
@@ -24,4 +24,20 @@ public class AccountHelper {
         return acct.Contacts != null;
     }
 
+    //Utility method to create a related Contact to our Account(s)
+    public static void generateRelatedContacts(List<Account> accountsToRelate){
+        /*NOTE: Since we have a trigger auto-assigning a default email to new Contacts 
+                without one, we should absolutely bulkify to minimize recussion*/
+        List<Contact> contactsToAdd = new List<Contact>();
+        for(Integer i = 0; i < accountsToRelate.size(); i++){
+            Contact relatedContact = new Contact(
+                FirstName = 'Jane' + i,
+                LastName = 'Doe' + i,
+                Email = 'janedoe'+ i +'@coldfax.com',
+                AccountId = accountsToRelate[i].Id
+            );
+            contactsToAdd.add(relatedContact);
+        }
+        insert contactsToAdd;
+    }
 }
