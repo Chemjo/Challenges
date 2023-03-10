@@ -12,7 +12,10 @@ trigger ContactTrigger on Contact (before insert, before update, before delete, 
           when BEFORE_UPDATE {}
           when BEFORE_DELETE {}
           when AFTER_INSERT {}
-          when AFTER_UPDATE {}
+          when AFTER_UPDATE {
+            //Challenge 4: After a Contact's phone is updated, update its related Account's phone
+            ContactHelper.updateRelatedAccountPhone(Trigger.new);
+          }
           when AFTER_DELETE {}
           when AFTER_UNDELETE {}
     }
