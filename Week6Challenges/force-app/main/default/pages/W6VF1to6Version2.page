@@ -10,6 +10,9 @@
             	<apex:outputText value="{!sintracorp.BillingCity}" />
             </apex:pageBlockSection>
         </apex:pageBlock>
+        <apex:pageBlock >
+            <apex:outputText value="{!$Label.AboutMe}"/>
+        </apex:pageBlock>
     </apex:form>
 </apex:page>
 
