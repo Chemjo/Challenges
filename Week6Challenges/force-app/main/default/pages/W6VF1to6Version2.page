@@ -1,0 +1,16 @@
+<apex:page controller="AccountCustomController">
+    <apex:form >
+        <apex:pageBlock >
+			<apex:pageBlockSection >
+            	<apex:outputText value="{!sintracorp.Name}" />
+            	<apex:outputText value="{!sintracorp.Phone}" />
+            	<apex:outputText value="{!sintracorp.NumberOfEmployees}" />
+            	<apex:outputText value="{!sintracorp.AnnualRevenue}" />
+            	<apex:outputText value="{!sintracorp.Rating}" />
+            	<apex:outputText value="{!sintracorp.BillingCity}" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
+
+<!--This uses a custom record included in the repository (data/accounts/sintracorp.csv)-->

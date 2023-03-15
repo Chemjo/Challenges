@@ -3,6 +3,11 @@
         <version>56.0</version>
            <types>
                 <members>Week6Visualforce1to6</members>
+                <members>W6VF1to6Version2</members>
                 <name>ApexPage</name>
+            </types>
+            <types>
+                <members>AccountCustomController</members>
+                <name>ApexClass</name>
             </types>
     </Package>
