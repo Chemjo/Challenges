@@ -1,19 +1,66 @@
-<apex:page controller="AccountCustomController">
+<apex:page controller="AccountCustomController" standardStylesheets="false">
+    <apex:stylesheet value="{!URLFOR($Resource.Week6Stylesheet)}"/>  
+    
+    <style type="text/css">
+        @font-face{
+			font-family: 'vt323regular';
+			src: url("{!URLFOR($Resource.WebFontKit, 'vt323-regular-webfont.woff')}") format('woff'),
+	 			 url("{!URLFOR($Resource.WebFontKit, 'vt323-regular-webfont.woff2')}") format('woff2');
+			font-weight: normal;
+			font-style: normal;
+		}
+    </style>
+    
     <apex:form >
-        <apex:pageBlock >
-			<apex:pageBlockSection >
-            	<apex:outputText value="{!sintracorp.Name}" />
-            	<apex:outputText value="{!sintracorp.Phone}" />
-            	<apex:outputText value="{!sintracorp.NumberOfEmployees}" />
-            	<apex:outputText value="{!sintracorp.AnnualRevenue}" />
-            	<apex:outputText value="{!sintracorp.Rating}" />
-            	<apex:outputText value="{!sintracorp.BillingCity}" />
-            </apex:pageBlockSection>
-        </apex:pageBlock>
-        <apex:pageBlock >
-            <apex:outputText value="{!$Label.AboutMe}"/>
-        </apex:pageBlock>
-    </apex:form>
+        
+            <apex:pageBlock >
+                
+                <apex:pageBlockSection >
+                    <apex:pageBlockSectionItem dataStyleClass="accountHeader">
+                        <apex:outputText value="Account Information:"/>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection columns="1">
+                    <apex:pageBlockSectionItem dataStyleClass="accountData" labelStyleClass="accountLabel" >
+                        <apex:outputLabel value="Name: "/>
+                        <apex:outputText value="{!sintracorp.Name}" />
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem dataStyleClass="accountData" labelStyleClass="accountLabel" >
+                        <apex:outputLabel value="Phone: "/>
+                        <apex:outputText value="{!sintracorp.Phone}" />
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem dataStyleClass="accountData" labelStyleClass="accountLabel">
+                        <apex:outputLabel value="Number of Employees: "/>
+                        <apex:outputText value="{!sintracorp.NumberOfEmployees}" />
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem dataStyleClass="accountData" labelStyleClass="accountLabel">
+                        <apex:outputLabel value="Annual Revenue: "/>
+                        <apex:outputText value="{!sintracorp.AnnualRevenue}" />
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem dataStyleClass="accountData" labelStyleClass="accountLabel">
+                        <apex:outputLabel value="Rating: "/>
+                        <apex:outputText value="{!sintracorp.Rating}" />
+                    </apex:pageBlockSectionItem>
+                    
+                    <apex:pageBlockSectionItem dataStyleClass="accountData" labelStyleClass="accountLabel">
+                        <apex:outputLabel value="City: "/>
+                        <apex:outputText value="{!sintracorp.BillingCity}" />
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+                <br/>
+                <apex:pageBlockSection >
+                    <apex:pageBlockSectionItem dataStyleClass="aboutMe">
+                        <apex:outputText value="{!$Label.AboutMe}"/>
+                    </apex:pageBlockSectionItem>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+
+        </apex:form>
 </apex:page>
 
 <!--This uses a custom record included in the repository (data/accounts/sintracorp.csv)-->

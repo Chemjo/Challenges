@@ -1,0 +1,45 @@
+@font-face{
+			font-family: 'vt323regular';
+			src: url("{!URLFOR($Resource.WebFontKit, 'vt323-regular-webfont.woff')}") format('woff'),
+	 			 url("{!URLFOR($Resource.WebFontKit, 'vt323-regular-webfont.woff2')}") format('woff2');
+			font-weight: normal;
+			font-style: normal;
+}
+
+*{
+    font-family:vt323regular;
+    color:#00e600;
+}
+
+:root{
+    background:repeating-linear-gradient(#000000,#001a00,#000000 1%);
+    
+}
+
+.accountData{
+    font-size: 1.8vw;
+    padding:10px;
+}
+.accountLabel{
+    float:inline-start;
+    font-weight: bold;
+    font-size: 2vw;
+    padding:10px;
+    border-left: solid #00e600;
+}
+
+.accountHeader{
+    float:inline-start;
+    font-weight: bold;
+    font-size: 2.5vw;
+    padding:10px;
+    border-bottom: solid #00e600;
+}
+
+.aboutMe{
+    font-size:1.8vw;
+    max-width: 50vw;
+    padding:10px;
+    border: inset #00e600;
+    background:repeating-linear-gradient(#000000,#001a00 1%,#000000,#011901 1%);
+}

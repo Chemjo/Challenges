@@ -10,4 +10,13 @@
                 <members>AccountCustomController</members>
                 <name>ApexClass</name>
             </types>
+            <types>
+                <members>AboutMe</members>
+                <name>CustomLabel</name>
+            </types>
+            <types>
+                <members>Week6Stylesheet</members>
+                <members>WebFontKit</members>
+                <name>StaticResource</name>
+            </types>
     </Package>

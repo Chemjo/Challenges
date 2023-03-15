@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AboutMe</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>AboutMe</shortDescription>
+        <value>About Me: I was born and raised in Saint Petersburg, Florida. In undergrad, I majored in Japanese Language and Culture and minored in Classics and Linguistics. I also have an MBA with an International Business concentration. I enjoy fantasy, and my favorite author is Brandon Sanderson. His novels in the Cosmere are some of the best I&apos;ve read. I enjoy cooking, tie-dying, and gaming of all kinds. I can&apos;t choose a single favorite Pokemon, but I especially enjoy Steel types such as Metagross, Jirachi, and Tinkaton.</value>
+    </labels>
+</CustomLabels>
