@@ -1,4 +1,4 @@
-<apex:page controller="AccountCustomController" standardStylesheets="false">
+<apex:page controller="AccountCustomController" standardStylesheets="false" extensions="AccountCustomExtension">
     <apex:stylesheet value="{!URLFOR($Resource.Week6Stylesheet)}"/>  
     
     <style type="text/css">
@@ -12,6 +12,16 @@
     </style>
     
     <apex:form >
+        
+     	<apex:pageBlock id="Greeting">
+            <apex:commandButton value="Display Greeting" action="{!buttonClick}"/>
+            <apex:actionSupport reRender="Greeting"/>
+        	<apex:pageBlockSection >
+            	<apex:pageBlockSectionItem rendered="{!buttonClicked}" dataStyleClass="greeting">
+                    <apex:outputText value="{!Greeting}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+       	</apex:pageBlock>
         
             <apex:pageBlock >
                 
@@ -59,6 +69,7 @@
                     </apex:pageBlockSectionItem>
                 </apex:pageBlockSection>
             </apex:pageBlock>
+
 
         </apex:form>
 </apex:page>

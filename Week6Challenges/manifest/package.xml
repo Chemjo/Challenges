@@ -8,6 +8,7 @@
             </types>
             <types>
                 <members>AccountCustomController</members>
+                <members>AccountCustomExtension</members>
                 <name>ApexClass</name>
             </types>
             <types>
