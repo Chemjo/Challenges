@@ -2,22 +2,24 @@
     <Package xmlns="http://soap.sforce.com/2006/04/metadata">
         <version>56.0</version>
            <types>
-                <members>Week6Visualforce1to6</members>
-                <members>W6VF1to6Version2</members>
+                <!--<members>Week6Visualforce1to6</members>
+                <members>W6VF1to6Version2</members>-->
+                <members>Week6AccountsAndContacts</members>
                 <name>ApexPage</name>
             </types>
             <types>
-                <members>AccountCustomController</members>
-                <members>AccountCustomExtension</members>
+                <!--<members>AccountCustomController</members>
+                <members>AccountCustomExtension</members>-->
+                <members>AccountAndContactController</members>
                 <name>ApexClass</name>
             </types>
-            <types>
+            <!--<types>
                 <members>AboutMe</members>
                 <name>CustomLabel</name>
-            </types>
+            </types>-->
             <types>
                 <members>Week6Stylesheet</members>
-                <members>WebFontKit</members>
+                <!--<members>WebFontKit</members>-->
                 <name>StaticResource</name>
             </types>
     </Package>

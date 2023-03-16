@@ -13,7 +13,6 @@
 
 :root{
     background:repeating-linear-gradient(#000000,#001a00,#000000 1%);
-    
 }
 
 .accountData{
@@ -49,9 +48,17 @@
 }
 
 .accountInputData{
-    
+    float:inline-start;
+    background-color: #001a00;
+    font-size:1.5rem;
 }
 
-.accountInputLabels{
-    
+.accountInputLabel{
+    font-size:2.2rem;
 }
+
+.accountInfo{
+    float:inline-start;
+    font-size:1.8rem;
+}
+

@@ -1,0 +1,83 @@
+<apex:page controller="AccountAndContactController" standardStylesheets="false">
+    <apex:stylesheet value="{!URLFOR($Resource.Week6Stylesheet)}"/>  
+    
+    <style type="text/css">
+        @font-face{
+			font-family: 'vt323regular';
+			src: url("{!URLFOR($Resource.WebFontKit, 'vt323-regular-webfont.woff')}") format('woff'),
+	 			 url("{!URLFOR($Resource.WebFontKit, 'vt323-regular-webfont.woff2')}") format('woff2');
+			font-weight: normal;
+			font-style: normal;
+		}
+    </style>
+    
+    <apex:form>
+        
+        <apex:pageBlock >
+            
+            <apex:outputPanel styleClass="accountInputLabel">
+                Select your Account:
+            </apex:outputPanel>
+
+            <apex:pageBlockSection>
+                    
+                <apex:selectList value="{!chosenAcc}" size = "1" styleClass="accountInputData">
+                    <apex:selectOptions value = "{!accChoices}"/>
+                </apex:selectList>
+
+                <br/>
+                <br/>
+                <br/>
+
+                <apex:commandButton value="{!buttonText}" action="{!displayAccount}" styleClass="accountInputData" />
+                <apex:actionSupport reRender="AccountInfo"/>
+
+            </apex:pageBlockSection>
+        </apex:pageBlock>   
+    </apex:form>
+
+    <br/>
+
+    <apex:form rendered="{!isAccountSelected}" id="AccountInfo">
+        <apex:pageBlock>
+            <apex:pageBlockSection columns="1">
+                
+                <apex:pageBlockSectionItem dataStyleClass="accountInfo">
+                    <apex:outputText value = "Name:  {!Account.Name}"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem dataStyleClass="accountInfo">
+                    <apex:outputText value = "Annual Revenue:  {!Account.AnnualRevenue}"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem dataStyleClass="accountInfo">
+                    <apex:outputText value = "Number of Employees:  {!Account.NumberOfEmployees}"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem dataStyleClass="accountInfo">
+                    <apex:outputText value = "Rating:  {!Account.Rating}"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem dataStyleClass="accountInfo">
+                    <apex:outputText value = "Phone:  {!Account.Phone}"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem dataStyleClass="accountInfo">
+                    <apex:outputText value = "City:  {!Account.BillingCity}"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem dataStyleClass="accountInfo">
+                    <apex:outputText value = "State/Province:  {!Account.BillingState}"/>
+                </apex:pageBlockSectionItem>
+
+                <apex:pageBlockSectionItem dataStyleClass="accountInfo">
+                    <apex:outputText value = "Country:  {!Account.BillingCountry}"/>
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    
+    
+</apex:page>
