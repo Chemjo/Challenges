@@ -75,6 +75,14 @@
                 </apex:pageBlockSectionItem>
 
             </apex:pageBlockSection>
+
+            <apex:outputText value="Employees:" styleClass="accountInfo" />
+
+            <apex:dataList value="{!relatedContacts}" var="con" styleClass="accountInfo">
+                <apex:outputText value="{!con.Name}"/>
+            </apex:dataList>
+
+
         </apex:pageBlock>
     </apex:form>
     

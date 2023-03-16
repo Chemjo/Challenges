@@ -14,7 +14,12 @@ public class AccountAndContactController {
         nameToCon = new Map<String,Contact>();
         isAccountSelected = false;
         
-    	List<Account> accChoices = [SELECT Name,Phone,BillingCity,Rating,NumberOfEmployees,AnnualRevenue,BillingState,BillingCountry, (SELECT Name FROM Contacts) FROM Account WHERE Id In (SELECT AccountId FROM Contact)];
+    	List<Account> accChoices = [
+            SELECT Name,Phone,BillingCity,Rating,NumberOfEmployees,AnnualRevenue,BillingState,BillingCountry,
+            (SELECT Name FROM Contacts) 
+            FROM Account 
+            WHERE Id In (SELECT AccountId FROM Contact)
+        ];
         for(Account acc : accChoices){
             nameToAcc.put(acc.Name, acc);
             for(Contact con : acc.Contacts){
@@ -44,6 +49,14 @@ public class AccountAndContactController {
 
     public Account getAccount(){
         return nameToAcc.get(chosenAcc);
+    }
+
+    public List<Contact> getRelatedContacts(){
+        List<Contact> relatedContacts = new List<Contact>();
+        for(Contact con : getAccount().Contacts){
+            relatedContacts.add(con);
+        }
+        return relatedContacts;
     }
 
 }
