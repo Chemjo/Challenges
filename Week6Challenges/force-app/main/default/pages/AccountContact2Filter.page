@@ -1,0 +1,19 @@
+<apex:page controller="AccountContactController2">
+
+    <apex:form>
+
+        <apex:pageBlock tabStyle="Account">
+
+        <apex:pageBlockButtons>
+            <apex:commandButton value="Go To Display Page" action="{!displayPage}"/>
+        </apex:pageBlockButtons>
+
+        <apex:selectList value="{!ratingFilter}" label="Filter Accounts by Their Rating" size="1">
+            <apex:selectOptions value="{!ratingChoices}"/>
+        </apex:selectList>
+
+        </apex:pageBlock>
+
+    </apex:form>
+
+</apex:page>
