@@ -1,0 +1,16 @@
+<apex:page controller="AccountContactController2">
+
+    <apex:form>
+
+        <apex:pageBlock>
+
+            <apex:pageBlockTable value="{!myVals}" var="field">
+                <apex:column value="{!field.accField}" headerValue="Account Name:"/>
+                <apex:column value="{!field.conField}" headerValue="Related Contacts:"/>
+            </apex:pageBlockTable>
+
+        </apex:pageBlock>
+
+    </apex:form>
+
+</apex:page>
