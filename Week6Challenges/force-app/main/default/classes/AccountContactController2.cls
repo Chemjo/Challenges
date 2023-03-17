@@ -1,15 +1,18 @@
 public with sharing class AccountContactController2 {
     
     public List<Wrapper> myVals {get; set;}
+    public List<Wrapper> myStartingVals {get; set;}
     public List<Account> selectedAccounts {get; set;}
     public List<Account> systemAccounts {get; set;}
 
     public String ratingFilter {get; set;}
+    public String searchTerm {get; set;}
     
     public AccountContactController2() {
         systemAccounts = [SELECT Name, Rating, (SELECT Name FROM Contacts) FROM Account WHERE Id In (SELECT AccountId FROM Contact)];
         selectedAccounts = new List<Account>();
         myVals = new List<Wrapper>();
+        myStartingVals = new List<Wrapper>();
         for(Account a : systemAccounts){
             Wrapper wrapToAdd = new Wrapper(a.Name,'',a);
             wrapToAdd.conField = wrapToAdd.getConField();
@@ -17,6 +20,10 @@ public with sharing class AccountContactController2 {
             selectedAccounts.add(a);
         }
         ratingFilter = 'All Accounts';
+        searchTerm = '';
+        for(Wrapper w : myVals){
+            myStartingVals.add(w);
+        }
     }
 
     public PageReference displayPage(){
@@ -89,6 +96,22 @@ public with sharing class AccountContactController2 {
             }
         }
         return filterDisplay;
+    }
+
+    public void executeSearch(){
+        myVals.clear();
+        searchTerm = searchTerm.toLowerCase();
+        for(Wrapper w : myStartingVals){
+            String nameToLowercase = w.getAccField().toLowerCase();
+            if(nameToLowercase.contains(searchTerm)){
+                myVals.add(w);
+            }
+        }
+        if(myVals.size() == 0){
+            for(Wrapper w : myStartingVals){
+                myVals.add(w);
+            }
+        }
     }
 
 
