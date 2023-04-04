@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="List Add Component">
+        <lightning-input label="Type your list item here" onchange={handleInput}>
+            {input}
+        </lightning-input>
+        <br/>
+        <lightning-button variant="success" label="Add Input to List" onclick={addListItem}>
+        </lightning-button>
+        <template for:each={listItems} for:item="listItem">
+            <p key={listItem.id}>
+                {listItem.text}
+            </p>
+        </template>
+    </lightning-card>
+</template>
