@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <p slot="title">{headerText}</p>
+        <lightning-button-stateful 
+            slot="actions"
+            onclick={toggleInputBox}
+            label-when-off="Reveal Input Field"
+            label-when-on="Input Field Visible"
+            label-when-hover="Hide Input Field"
+            icon-name-when-on="utility:check"
+            icon-name-when-hover="utility:close"
+            selected={isVisible}>
+        </lightning-button-stateful>
+        <lightning-input lwc:if={isVisible} onchange={handleChange}>
+            {headerText}
+        </lightning-input>
+    </lightning-card>
+</template>
