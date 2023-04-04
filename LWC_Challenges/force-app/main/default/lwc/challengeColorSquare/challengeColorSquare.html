@@ -1,0 +1,23 @@
+<template>
+    <lightning-card title="Change the Color of This Square">
+        <lightning-icon
+            icon-name="utility:stop"
+            class = {iconClass}>
+        </lightning-icon>
+        <lightning-button
+            label="Set to Red"
+            onclick={setRed}
+            slot="actions">
+        </lightning-button>
+        <lightning-button
+            label="Set to Blue"
+            onclick={setBlue}
+            slot="actions">
+        </lightning-button>
+        <lightning-button
+            label="Set to Green"
+            onclick={setGreen}
+            slot="actions">
+        </lightning-button>
+    </lightning-card>
+</template>

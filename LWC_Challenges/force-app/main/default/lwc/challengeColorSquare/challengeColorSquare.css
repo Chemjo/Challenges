@@ -1,0 +1,20 @@
+
+.red{
+    --sds-c-icon-color-foreground-default:#f14e4e;
+    --sds-c-icon-color-background:#e92222;
+}
+
+.blue{
+    --sds-c-icon-color-foreground-default:#4e4ef1;
+    --sds-c-icon-color-background:#2222e9;
+}
+
+.green{
+    --sds-c-icon-color-foreground-default:#4ef14e;
+    --sds-c-icon-color-background:#22e922;
+}
+
+.grey{
+    --sds-c-icon-color-foreground-default:#bababa;
+    --sds-c-icon-color-background:#525252;
+}
