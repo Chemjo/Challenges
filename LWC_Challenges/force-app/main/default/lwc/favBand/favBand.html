@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title={name}>
+        <div class="slds-grid slds-grid_vertical slds-grid_align-space slds-gutters">
+            <lightning-formatted-text
+                value={description}
+                class="slds-col slds-size_1-of-3 slds-p-around_small">
+            </lightning-formatted-text>
+            <img 
+                src={imageRef}
+                alt={altText}
+                style="max-width: 25rem;"
+                class="slds-col slds-size_1-of-2 slds-p-around_small"
+        />
+        </div>
+    </lightning-card>
+
+</template>

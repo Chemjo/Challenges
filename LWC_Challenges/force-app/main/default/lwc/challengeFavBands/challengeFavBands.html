@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Favorite Bands/Artists" class="slds-p-around_xx-small">
+        <lightning-combobox
+            label="Pick a band to display:"
+            value={band}
+            placeholder="Select a Band"
+            options={bands}
+            onchange={handleChange}
+            class="slds-p-around_small"
+        ></lightning-combobox>
+        <lightning-button
+            onclick={refreshBand}
+            label="Refresh to select a different band"
+            class="slds-p-around_x-small">
+        </lightning-button>
+        <div lwc:if={bandChosen} class="slds-p-around_x-small">
+            <c-fav-band band={band.value}></c-fav-band>
+        </div>
+    </lightning-card>
+</template>
