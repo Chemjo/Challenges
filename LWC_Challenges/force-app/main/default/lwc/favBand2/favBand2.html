@@ -1,10 +1,14 @@
 <template>
     <lightning-card title={name}>
         <div class="slds-grid slds-grid_vertical slds-grid_align-space slds-gutters">
-            <lightning-formatted-text
-                value={description}
-                class="slds-col slds-size_1-of-3 slds-p-around_small">
-            </lightning-formatted-text>
+            <lightning-button-stateful
+                label-when-off="Learn More"
+                label-when-on="Hide Description"
+                icon-name-when-off="utility:info"
+                icon-name-when-on="utility:skip_back"
+                class="slds-col slds-p-around_small"
+                onclick={learn}
+            ></lightning-button-stateful>
             <img 
                 src={imageRef}
                 alt={altText}
@@ -13,5 +17,4 @@
             />
         </div>
     </lightning-card>
-
 </template>
