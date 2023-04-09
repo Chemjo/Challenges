@@ -1,0 +1,24 @@
+{
+	"returnValue": {
+		"apiName": "Contact",
+		"childRelationships": {},
+		"eTag": "4ed0841f79f52e1971db7e06303f206e",
+		"fields": {
+			"FirstName": {
+				"displayValue": null,
+				"value": "Lisa"
+			},
+			"LastName": {
+				"displayValue": null,
+				"value": "Jones"
+			}
+		},
+		"id": "0038b0000344az1AAA",
+		"lastModifiedById": "0058b00000H1SYgAAN",
+		"lastModifiedDate": "2023-03-30T20:00:23.000Z",
+		"recordTypeId": "012000000000000AAA",
+		"recordTypeInfo": null,
+		"systemModstamp": "2023-03-30T20:00:23.000Z",
+		"weakEtag": 1680206423000
+	}
+}
